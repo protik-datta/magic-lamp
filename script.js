@@ -22,6 +22,10 @@ const showSmoke = () => {
 };
 
 const showWish = () => {
+  message.style.animation = "none";
+  void message.offsetWidth;
+  message.style.animation = "messageAppear 4s ease-out forwards";
+
   const randomWish = wishes[Math.floor(Math.random() * wishes.length)];
   message.textContent = randomWish;
 };
@@ -29,4 +33,5 @@ const showWish = () => {
 lamp.addEventListener("click", () => {
   showSmoke();
   showWish();
+  lamp.classList.add("shake");
 });
